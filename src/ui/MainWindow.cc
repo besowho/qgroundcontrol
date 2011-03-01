@@ -383,6 +383,14 @@ void MainWindow::buildCommonWidgets()
         addToToolsMenu(logPlayerDockWidget, tr("MAVLink Log Replay"), SLOT(showToolWidget(bool)), MENU_MAVLINK_LOG_PLAYER, Qt::RightDockWidgetArea);
     }
 
+    if (!qgisMapControlWidget)
+    {
+        qgisMapControlWidget = new QDockWidget(tr("Qgis Map Control"),this);
+        qgisMapControlWidget->setWidget(new QgisMapControl(this));
+        qgisMapControlWidget->setObjectName("QGISMAPCONTROL_DOCKWIDGET");
+        addToToolsMenu(qgisMapControlWidget, tr("Qgis Map Control"), SLOT(showToolWidget(bool)), MENU_QGIS_MAP_CONTROL, Qt::LeftDockWidgetArea);
+    }
+
     // Center widgets
     if (!mapWidget)
     {
@@ -401,6 +409,8 @@ void MainWindow::buildCommonWidgets()
         dataplotWidget    = new QGCDataPlot2D(this);
         addToCentralWidgetsMenu (dataplotWidget, "Logfile Plot", SLOT(showCentralWidget()),CENTRAL_DATA_PLOT);
     }
+
+
 }
 
 

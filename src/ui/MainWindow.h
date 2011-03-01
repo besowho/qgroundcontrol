@@ -76,6 +76,7 @@ This file is part of the QGROUNDCONTROL project
 
 #include "SlugsVideoCamControl.h"
 #include "UASControlParameters.h"
+#include "QgisMapControl.h"
 
 /**
  * @brief Main Application Window
@@ -213,6 +214,7 @@ protected:
     // this will be fixed in a future release.
     typedef enum _TOOLS_WIDGET_NAMES {
       MENU_UAS_CONTROL_PARAM,
+      MENU_QGIS_MAP_CONTROL,
       MENU_UAS_CONTROL,
       MENU_UAS_INFO,
       MENU_CAMERA,
@@ -406,7 +408,7 @@ protected:
     QPointer<QDockWidget> slugsPIDControlWidget;
     QPointer<QDockWidget> slugsHilSimWidget;
     QPointer<QDockWidget> slugsCamControlWidget;
-
+    QPointer<QDockWidget> qgisMapControlWidget;
 
     // Popup widgets
     JoystickWidget* joystickWidget;
